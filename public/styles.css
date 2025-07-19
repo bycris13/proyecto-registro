@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;        
+    border-radius: 12px;              
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+    max-width: 900px;         
+ }
+  
+.header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 3rem;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+/* Tamaño del icono */
+.header i{
+    font-size: 3rem;
+}
+
+/* Agrupa la forma visualmente */
+#formVisitantes {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.fecha_nombre{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.tipo-documento{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.seguros{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.info-adicional{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Íconos en las etiquetas */
+label i {
+    margin-right: 0.4rem;
+}
