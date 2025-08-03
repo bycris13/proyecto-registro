@@ -1,0 +1,126 @@
+/* Estilos específicos para el dashboard */
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Estilos para la sección de acciones */
+.dashboard-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para los botones */
+.btn-primary {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(75, 108, 183, 0.3);
+}
+
+/* Estilos para la tabla */
+.table {
+  font-size: 0.95rem;
+}
+
+.table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  color: #495057;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(42, 82, 152, 0.05);
+}
+
+/* Estilos para los botones de acción en la tabla */
+.btn-action {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  margin-right: 0.25rem;
+}
+
+/* Animación para la tabla */
+.table tbody tr {
+  transition: all 0.2s ease;
+}
+
+/* Estilos para la fila de "no hay datos" */
+.no-data-row td {
+  padding: 2rem;
+  font-style: italic;
+  color: #6c757d;
+}
+
+/* Estilos para la tarjeta */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #dee2e6;
+  margin-bottom: 2rem;
+}
+
+.card-header {
+  border-radius: 10px 10px 0 0 !important;
+  padding: 1rem 1.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Animación para los elementos del dashboard */
+.dashboard-actions button,
+.card {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+.dashboard-actions button:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.dashboard-actions button:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dashboard-actions button:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

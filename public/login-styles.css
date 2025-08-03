@@ -1,0 +1,89 @@
+/* Estilos específicos para la página de login */
+
+#loginForm {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Efecto hover para el botón */
+.btn-primary {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border: none;
+  padding: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+/* Estilo para los inputs cuando están en foco */
+.form-control:focus {
+  border-color: #2a5298;
+  box-shadow: 0 0 0 0.25rem rgba(42, 82, 152, 0.25);
+}
+
+/* Estilo para el checkbox */
+.form-check-input:checked {
+  background-color: #2a5298;
+  border-color: #2a5298;
+}
+
+/* Animación suave para los elementos del formulario */
+#loginForm .form-floating,
+#loginForm .form-check,
+#loginForm button {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+#loginForm .form-floating:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+#loginForm .form-floating:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+#loginForm .form-check {
+  animation-delay: 0.3s;
+}
+
+#loginForm button {
+  animation-delay: 0.4s;
+}
+
+#loginForm .text-center {
+  opacity: 0;
+  animation: fadeIn 0.5s 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilo para el enlace de contraseña olvidada */
+#loginForm a {
+  color: #2a5298;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+#loginForm a:hover {
+  color: #1e3c72;
+  text-decoration: underline !important;
+}
