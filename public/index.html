@@ -9,6 +9,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <script>
+      const isAuthenticated = localStorage.getItem('currentUser');
+      if (!isAuthenticated) {
+        window.location.href = 'pages/login.html';
+      }
+    </script>
 </head>
 <body>
 <main class="container">
@@ -102,6 +108,17 @@
     </form>
     <script src="form-visitantes.js"></script>
 </main>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnCerrarSesion = document.getElementById('btnCerrarSesion');
+      if (btnCerrarSesion) {
+        btnCerrarSesion.addEventListener('click', function () {
+          localStorage.removeItem('currentUser');
+          window.location.href = 'pages/login.html';
+        });
+      }
+    });
+  </script>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
