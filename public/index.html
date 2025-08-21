@@ -3,122 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario Visitantes</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Inicio de Sesión</title>
+  <link rel="stylesheet" href="styles.css"> <!-- ✅ Corregido -->
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <script>
-      const isAuthenticated = localStorage.getItem('currentUser');
-      if (!isAuthenticated) {
-        window.location.href = 'pages/login.html';
-      }
-    </script>
+  <link rel="stylesheet" href="styles/login-styles.css"> <!-- ✅ Corregido -->
 </head>
 <body>
 <main class="container">
   
-    <div class="header">
-        <i class="fa-solid fa-shield-halved d-flex justify-content-center mb-3"></i>
-        <h2 class="mb-4 d-flex justify-content-center">Sistema de Acceso</h2>
-        <p class="d-flex justify-content-center">Registro y control de visitantes - Seguridad Edificio</p>
-        
-        <div class="d-flex justify-content-end mt-3">
-            <button id="btnDashboard" class="btn btn-info me-2" style="display: none;">
-                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
-            </button>
-            <button id="btnCerrarSesion" class="btn btn-outline-light">
-                <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
-            </button>
-        </div>
+  <div class="header">
+    <i class="fa-solid fa-shield-halved d-flex justify-content-center mb-3"></i>
+    <h2 class="mb-4 d-flex justify-content-center">Bienvenido</h2>
+    <p class="d-flex justify-content-center">Inicie sesión para continuar</p>
+  </div>
+  
+  <form id="loginForm">
+    <div class="form-floating mb-4">
+      <input type="text" class="form-control" id="usernameInput" placeholder="Nombre de usuario" required>
+      <label for="usernameInput"><i class="fa-solid fa-user me-2"></i>Nombre de usuario</label>
     </div>
+
+    <div class="form-floating mb-4">
+      <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña" required>
+      <label for="passwordInput"><i class="fa-solid fa-lock me-2"></i>Contraseña</label>
+    </div>
+
+    <div class="form-check mb-4">
+      <input class="form-check-input" type="checkbox" id="rememberMe">
+      <label class="form-check-label" for="rememberMe">Recordar sesión</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
     
-    <form id="formVisitantes">
-    <div class="fecha_nombre">
-        <div class="form-floating" style="width: 300px;">
-            <input type="date" class="form-control" id="fechaInput" placeholder="Fecha" required>
-            <label for="fechaInput"><i class="fas fa-calendar me-2"></i>Fecha de visita</label>
-        </div>
-        
-        <div class="form-floating mb-3" style="width: 400px;">
-            <input type="text" class="form-control" id="nombreInput" placeholder="Nombre completo" required>
-            <label for="nombreInput"><i class="fa-solid fa-user me-2"></i>Nombres y apellidos</label>
-        </div>
+    <div class="text-center mt-3">
+      <a href="#" class="text-decoration-none">¿Olvidó su contraseña?</a>
     </div>
-
-    <div class="tipo-documento">
-    <div class="form-floating mb-3" style="width: 400px;">
-        <select class="form-select" id="tipoDocInput" required>
-            <option value="" selected disabled>Seleccionar...</option>
-            <option value="cc">C.C.</option>
-            <option value="ti">T.I.</option>
-            <option value="ce">C.E.</option>
-            <option value="pasaporte">Pasaporte</option>
-        </select>
-        <label for="tipoDocInput"><i class="fas fa-id-card me-2"></i>Tipo de documento</label>
-    </div>
-    
-      <div class="form-floating mb-3" style="width: 300px;">
-        <input type="text" class="form-control" id="documentoInput" placeholder="Documento de identidad" required>
-        <label for="documentoInput"><i class="fa-solid fa-hashtag me-2"></i>Documento de identidad</label>
-      </div>
-    </div>
-
-    <div class="seguros">
-      <div class="form-floating mb-3" style="width: 400px;">
-        <input type="text" class="form-control" id="epsInput" placeholder="EPS">
-        <label for="epsInput"><i class="fa-solid fa-suitcase-medical me-2"></i>EPS</label>
-      </div>
-
-      <div class="form-floating mb-3" style="width: 400px;">
-        <input type="text" class="form-control" id="arlInput" placeholder="ARL">
-        <label for="arlInput"><i class="fas fa-hard-hat me-2"></i>ARL</label>
-      </div>
-    </div>
-      
-    <div class="info-adicional">
-      <div class="form-floating mb-3" style="width: 200px;">
-        <input type="time" class="form-control" id="ingresoInput" placeholder="Hora de ingreso" required>
-        <label for="ingresoInput"><i class="fas fa-sign-in-alt me-2"></i>Hora de ingreso</label>
-      </div>
-
-      <div class="form-floating mb-3" style="width: 200px;">
-        <input type="time" class="form-control" id="salidaInput" placeholder="Hora de salida">
-        <label for="salidaInput"><i class="fas fa-sign-out-alt me-2"></i>Hora de salida</label>
-      </div>
-
-      <div class="form-floating mb-3" style="width: 300px;">
-        <input type="tel" class="form-control" id="emergenciaInput" placeholder="Teléfono emergencia" required>
-        <label for="emergenciaInput"><i class="fas fa-phone me-2"></i>Teléfono de contacto de emergencia</label>
-      </div>
-    </div>
-
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="empresaInput" placeholder="Empresa o quién autoriza" required>
-        <label for="empresaInput"><i class="fas fa-building me-2"></i>Empresa y/o quién autoriza</label>
-      </div>
-
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="motivoInput" placeholder="Motivo de ingreso" required>
-        <label for="motivoInput"><i class="fas fa-clipboard-list me-2"></i>Motivo de ingreso</label>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Registrar visitante</button>
-    </form>
-    <script src="scripts/form-visitantes.js"></script>
+  </form>
+  
+  <!-- ✅ Scripts corregidos sin modules -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="scripts/data/supabaseClient.js"></script>
+  <script src="scripts/domain/useAuth.js"></script>
+  <script src="scripts/login.js"></script>
 </main>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const btnCerrarSesion = document.getElementById('btnCerrarSesion');
-      if (btnCerrarSesion) {
-        btnCerrarSesion.addEventListener('click', function () {
-          localStorage.removeItem('currentUser');
-          window.location.href = 'pages/login.html';
-        });
-      }
-    });
-  </script>  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
